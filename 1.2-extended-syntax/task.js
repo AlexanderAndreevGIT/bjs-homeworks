@@ -32,12 +32,12 @@ function getAverageMark(marks){
 }
 
 function askDrink(name,dateOfBirthday){
-	 let result;
-    const currentYear = new Date().getFullYear();
-    if ((currentYear - dateOfBirthday.getFullYear()) >= 18) {
-    	result = `Не желаете ли олд-фэшн, ${name}?`
-    } else {
-    	result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`
-    }
-    return result;
+	let result;
+	const currentYear = new Date().getFullYear();
+	if ((currentYear - dateOfBirthday.getFullYear()) >= 18) {
+		result = `Не желаете ли олд-фэшн, ${name}?`
+	} else {
+		result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`
+	}
+	return result;
 }
