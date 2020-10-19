@@ -136,4 +136,3 @@ console.log( getPersonData({
 	aaa: 0,
 	bbb: 1
 }))
-
