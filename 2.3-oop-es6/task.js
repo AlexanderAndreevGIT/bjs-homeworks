@@ -105,32 +105,18 @@ class Library {
 class StudentLog {
 	constructor(name) {
 		this.name = name;
-		this.grades = {
-			algebra: [],
-			geometry: [],
-			russian: [],
-			physics: [],
-			music: [],
-		}
+		this.grades = {};
 	}
 	
 	getName() {
 		return this.name;
 	}
 
-	addSubject(subject) {
-		if (this.grades[subject] === undefined) {
-			this.grades[subject] = [];
-			console.log(`Предмет "${subject}" добавлен в журнал`)
-		} else {
-			console.log(`Предмет "${subject}" уже есть в журнале`)
-		}
-	}
-
 	addGrade(grade, subject) {
 		if (this.grades[subject] === undefined) {
-			console.log(`Предмета "${subject}" нет в журнале. Проверьте правильность его написания или добавьте предмет в журнал с помощью метода "addSubject"`)
-		} else if (grade === 1 || grade === 2 || grade === 3 || grade === 4 || grade === 5) {
+			this.grades[subject] = [];
+		}
+		if (grade === 1 || grade === 2 || grade === 3 || grade === 4 || grade === 5) {
 			return this.grades[subject].push(grade);
 		} else {
 			console.log(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`)
@@ -174,4 +160,3 @@ class StudentLog {
 		return Number(result.toFixed(2));
 	}
 }
-
